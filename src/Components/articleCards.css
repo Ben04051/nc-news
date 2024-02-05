@@ -1,0 +1,32 @@
+ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    }
+
+ul li{
+    border-top: 1px solid grey;
+    padding-top: 10px;
+}
+
+.article-card {
+    display: grid; 
+    grid-template-columns: 1.5fr 1fr; 
+    grid-template-rows: 2fr 0.2fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . "
+      ". . "
+      ". . "; 
+  }
+
+  .article-card img {
+    width: 90%;
+    height: 105%;
+}
+
+.article-card main {
+    font-size: 1.5em;
+}
+.article-card footer {
+    font-size: small;
+}
