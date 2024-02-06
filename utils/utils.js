@@ -42,6 +42,12 @@ export function editVotes(article_id, body){
     })
 }
 
+export function postNewComment(article_id, body){
+    return ncNewsAPI.post(`/articles/${article_id}/comments`, body).then((body) => {
+        return(body)
+    })
+}
+
 export function calculateYears(date){
     const dateObject = new Date(date)
         const currentDate = new Date()
