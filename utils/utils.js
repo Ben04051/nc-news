@@ -36,7 +36,11 @@ return ncNewsAPI.get(`/articles/${article_id}/comments`).then((response) => {
 })
 }
 
-
+export function editVotes(article_id, body){
+    return ncNewsAPI.patch(`/articles/${article_id}`, body).then((body) => {
+        return(body)
+    })
+}
 
 export function calculateYears(date){
     const dateObject = new Date(date)
