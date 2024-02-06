@@ -14,3 +14,31 @@ img {
     width: 100%;
     height: auto;
 }
+
+.profile-picture {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.comment-header {
+    display:grid;
+    grid-template-columns: auto 1fr auto;
+    
+}
+
+.author {
+    font-weight: bold;
+}
+
+.created-at {
+    margin-top: 0px
+}
+
+.body {
+    margin-top: 5px;
+}
+
+h4 {
+    margin-top: 0px;
+}
