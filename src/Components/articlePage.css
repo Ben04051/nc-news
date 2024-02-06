@@ -1,0 +1,16 @@
+footer {
+    line-height: 1px;
+}
+
+.topic {
+    text-decoration: underline;
+}
+
+.votes {
+    text-align: right;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}

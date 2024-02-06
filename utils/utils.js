@@ -9,6 +9,19 @@ export function getAllArticles() {
     })
 }
 
+export function getArticle(article_id) {
+    return ncNewsAPI.get(`/articles/${article_id}`).then((response) => {
+        return response.data.article
+    })
+}
+
+export function getAuthorName(username) {
+    return ncNewsAPI.get(`/users/${username}`).then((response) => {
+        return response.data.user.name
+    })
+}
+
+
 export function calculateYears(date){
     const dateObject = new Date(date)
         const currentDate = new Date()
