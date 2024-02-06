@@ -5,7 +5,6 @@ import HomePage from './HomePage'
 import ArticlePage from './ArticlePage'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
