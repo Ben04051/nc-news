@@ -4,7 +4,6 @@ const ncNewsAPI = axios.create({baseURL : 'https://northcoders-news-tn61.onrende
 
 export function getAllArticles() {
     return ncNewsAPI.get("/articles").then((response) => {
-        console.log(response.data.articles)
         return response.data.articles
     })
 }
@@ -20,6 +19,23 @@ export function getAuthorName(username) {
         return response.data.user.name
     })
 }
+
+export function getUserPhotos(usernames) {
+    const userNamePromises = usernames.map((username) => {
+        return ncNewsAPI.get(`/users/${username}`).then((response) => {
+            return response.data.user.avatar_url
+        })
+    })
+
+    return Promise.all(userNamePromises)
+}
+
+export function getArticleComments(article_id) {
+return ncNewsAPI.get(`/articles/${article_id}/comments`).then((response) => {
+    return response.data.comments
+})
+}
+
 
 
 export function calculateYears(date){
