@@ -1,7 +1,6 @@
 import {useParams} from "react-router-dom"
 import { editVotes, getArticle, getAuthorName} from "../../utils/utils"
 import { useEffect, useState } from "react"
-import GetComments from "./GetComments"
 
 export default function GetArticle () {
     const {article_id} = useParams()
@@ -50,6 +49,5 @@ export default function GetArticle () {
         </footer>
         <p>{articleInfo.body}</p>
         <p className = "votes">Votes: {articleVotes} <a><button onClick={handleVote}>{hasVoted ? 'Unvote': 'Vote'}</button></a></p>
-        <GetComments />
     </div>
 }
