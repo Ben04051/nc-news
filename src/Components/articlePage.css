@@ -41,4 +41,20 @@ img {
 
 h4 {
     margin-top: 0px;
+    margin-bottom: 2px;
 }
+
+.new-comment {
+    height: 50px;
+    position: relative;
+    padding: 4px;
+    border: 1px solid grey;
+    
+}
+
+.vertical-centre {
+    margin: 0;
+    top: 50%;
+    -ms-transform: translateY(-90%);
+    transform: translateY(-90%);
+  }
