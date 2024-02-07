@@ -37,6 +37,7 @@ img {
 
 .body {
     margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 h4 {
@@ -57,4 +58,18 @@ h4 {
     top: 50%;
     -ms-transform: translateY(-90%);
     transform: translateY(-90%);
+  }
+
+  .delete-button-container {
+   display: flex;
+   justify-content: flex-end;
+  }
+
+  .delete-button {
+    margin-bottom: 5px;
+  }
+
+  .comment-delete {
+    border-top: 1px solid grey;
+    padding-top: 15px;
   }
