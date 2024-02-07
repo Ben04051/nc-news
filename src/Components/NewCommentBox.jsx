@@ -20,7 +20,7 @@ export default function NewCommentBox() {
         setCommentLoading(true)
         postNewComment(article_id, newCommentToPost).then((response) => {
             const commentToPost = response.data.comment
-            setNewCommments((currentComments) =>  [...currentComments, commentToPost])
+            setNewCommments((currentComments) =>  [commentToPost, ...currentComments])
             setCommentInput("")
             setCommentPosted("Comment Added!")
             setCommentLoading(false)
