@@ -1,21 +1,15 @@
 import './articleCards.css'
 import { calculateYears } from '../../utils/utils'
-import {Link} from "react-router-dom"
+import ArticleCard from './ArticleCard'
 
-export default function ArticleCards ({articles}) {
-    return  <ul>
+export default function ArticleCards ({articles, topic}) {
+    return  (
+    <ul className="article-cards">
     {articles.map((article) => {
-         const yearsSincePosted = calculateYears(article.created_at)
-        return (
-            <Link key={article.article_id} to={`article/${article.title}/${article.article_id}`}>
-        <li key = {article.article_id} className="article-card">
-            <img src ={article.article_img_url} alt={article.title}/>
-            <main >{article.title}</main>
-            <footer></footer>
-            <footer>{yearsSincePosted} years ago | {article.topic}</footer>
-        </li>
-        </Link>)
+       const yearsSincePosted = calculateYears(article.created_at)
+       return<ArticleCard key={article.article_id} article={article} topic={topic} yearsSincePosted={yearsSincePosted}/>
     })}
-    </ul>
+    </ul> 
+    )
 
 }

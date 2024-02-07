@@ -2,9 +2,15 @@ import axios from 'axios'
 
 const ncNewsAPI = axios.create({baseURL : 'https://northcoders-news-tn61.onrender.com/api'})
 
-export function getAllArticles() {
-    return ncNewsAPI.get("/articles").then((response) => {
+export function getAllArticles(topic) {
+    return ncNewsAPI.get("/articles", {params : {topic_query: topic} }).then((response) => {
         return response.data.articles
+    })
+}
+
+export function getAllTopics() {
+    return ncNewsAPI.get("/topics").then((response) => {
+        return response.data.topics
     })
 }
 

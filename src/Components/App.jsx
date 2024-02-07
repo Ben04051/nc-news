@@ -17,6 +17,7 @@ function App() {
       <UserContext.Provider value={loggedInUser}>
       <Routes>
         <Route path="/" element ={<HomePage/>} />
+        <Route path="/topics/:topic_query" element={<HomePage />} />
         <Route path= "/article/:article_title/:article_id" element ={<ArticlePage/>} />
       </Routes>
       </UserContext.Provider>

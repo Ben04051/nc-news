@@ -3,12 +3,9 @@ ul {
     padding-inline-start: 0px;
     }
 
-ul li{
+.article-card {
     border-top: 1px solid grey;
     padding-top: 10px;
-}
-
-.article-card {
     display: grid; 
     grid-template-columns: 1.5fr 1fr; 
     grid-template-rows: 2fr 0.2fr; 
@@ -30,3 +27,20 @@ ul li{
 .article-card footer {
     font-size: small;
 }
+
+.topic-select-container ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+   }
+
+   .topic-select-container li {
+    margin-right: 5px;
+   }
+
+   .comment {
+    border-top: 1px solid grey;
+    padding-top: 10px;
+   }

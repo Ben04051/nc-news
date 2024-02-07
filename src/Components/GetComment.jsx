@@ -27,7 +27,7 @@ export default function GetComment({comment, index, userPhotos}) {
         <>
         {deletedCommentId === comment.comment_id ? commentDeleting ? <p className="comment-delete">deleting comment...</p> : <p className="comment-delete">{commentDeleted}</p>
         : 
-        <li key= {comment.comment_id}>
+        <li key= {comment.comment_id} className="comment">
         <div className="comment-header">
         {index === null ?  <img className="profile-picture"src={loggedInUser.avatar_url} alt="your profile picture"/>  :
         <img className= "profile-picture"src ={userPhotos[index]} alt={`${comment.author}'s profile picture'`}></img> }
