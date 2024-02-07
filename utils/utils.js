@@ -48,6 +48,12 @@ export function postNewComment(article_id, body){
     })
 }
 
+export function deleteComment(comment_id){
+    return ncNewsAPI.delete(`/comments/${comment_id}`).then((body) => {
+        return(body)
+    })
+}
+
 export function calculateYears(date){
     const dateObject = new Date(date)
         const currentDate = new Date()
