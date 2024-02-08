@@ -11,7 +11,9 @@ export default function ArticleCard ({article, topic, yearsSincePosted}){
                 <img src ={article.article_img_url} alt={article.title}/>
                 <main >{article.title}</main>
                 <footer></footer>
-                <footer>{yearsSincePosted} years ago | {article.topic}</footer>
+                <footer></footer>
+                <footer>votes: {article.votes} | Comments: {article.comment_count}</footer>
+                <footer>{yearsSincePosted} years ago | {article.topic} </footer>
             </li>
             </Link>)
         }

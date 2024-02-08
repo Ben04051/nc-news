@@ -8,8 +8,10 @@ export default function GetComments() {
     const {article_id} = useParams()
     const [articleComments, setArticleComments] = useState([])
     const [userPhotos, setUserPhotos] = useState([])
+    const [commentsLoading, setCommentsLoading] = useState(true)
 
     useEffect(() => {
+        setCommentsLoading(true)
         getArticleComments(article_id)
         .then((comments) => {
             setArticleComments(comments)
@@ -19,7 +21,13 @@ export default function GetComments() {
             return getUserPhotos(userNames)
         }).then((photos) => {
             setUserPhotos(photos)
+            setCommentsLoading(false)
         })}, [])
+
+        if(commentsLoading){
+            return <p>Comments Loading...</p>
+
+        }
 
         return(
             <>

@@ -18,7 +18,7 @@ ul {
 
   .article-card img {
     width: 90%;
-    height: 105%;
+    height: 100%;
 }
 
 .article-card main {
@@ -26,6 +26,7 @@ ul {
 }
 .article-card footer {
     font-size: small;
+    padding-top: 5PX;
 }
 
 .topic-select-container ul {
