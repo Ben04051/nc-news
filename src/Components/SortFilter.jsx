@@ -15,7 +15,6 @@ useEffect(() => {
 function handleQueries(event) {
     event.preventDefault()
     const newSearchParams = new URLSearchParams()
-    console.log(selectedOrderQuery)
     newSearchParams.set('sort_by', selectedSortQuery)
     newSearchParams.set('order', selectedOrderQuery)
     setSearchParams(newSearchParams)

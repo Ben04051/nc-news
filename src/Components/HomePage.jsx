@@ -5,6 +5,7 @@ import TopicSelector from "./TopicSelector"
 import {useParams} from "react-router-dom"
 import SortFilter from "./SortFilter"
 import {useSearchParams} from 'react-router-dom'
+import ErrorPage from "./ErrorPage"
 
 
 export default function HomePage() {
@@ -18,9 +19,11 @@ export default function HomePage() {
     const sortQuery = searchParams.get('sort_by')
     const orderQuery = searchParams.get('order')
     const [searchFiltersApplied, setSearchFiltersApplied] = useState(false)
+    const [errorMessage, setErrorMessage] = useState(null)
 
 
     useEffect(() => {
+        setErrorMessage(null)
         setSearchFiltersApplied(false)
         setArticlesLoading(true)
         getAllArticles({topic_query, sortQuery, orderQuery}).then((response) => {
@@ -37,8 +40,16 @@ export default function HomePage() {
             }).then(() => {
                 setPageIsLoading(false)
                 setArticlesLoading(false)
-            })
+            }).catch((error) => {
+                setErrorMessage(error.response.data.msg)
+                setPageIsLoading(false)
+                setArticlesLoading(false)
+            } )
     }, [topic_query, searchFiltersApplied])
+
+    if(errorMessage){
+        return <ErrorPage errorMessage={errorMessage} />
+    }
 
     if(pageIsLoading){
         return <p>Loading...</p>

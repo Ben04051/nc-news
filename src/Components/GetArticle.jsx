@@ -1,6 +1,7 @@
 import {useParams} from "react-router-dom"
 import { editVotes, getArticle, getAuthorName} from "../../utils/utils"
 import { useEffect, useState } from "react"
+import ErrorPage from "./ErrorPage"
 
 export default function GetArticle () {
     const {article_id} = useParams()
@@ -8,18 +9,26 @@ export default function GetArticle () {
     const [authorName, setAuthorName] = useState("")
     const [articleVotes, setArticleVotes] = useState(0)
     const [hasVoted, setHasVoted] = useState(false)
+    const [errorMessage, setErrorMessage] = useState(null)
+    const [articleLoading, setArticleLoading] = useState(true)
      
     useEffect(() => {
+        setArticleLoading(true)
         const hasVotedStored = localStorage.getItem(`voted:${article_id}`);
         if (hasVotedStored) {
             setHasVoted(true);
         }
+        console.log(article_id)
         getArticle(article_id).then((response) => {
             setArticleInfo(response)
             setArticleVotes(response.votes)
             return getAuthorName(response.author)
         }).then((author) => {
            setAuthorName(author)
+           setArticleLoading(false)
+        }).catch((error) => {
+            setErrorMessage(error.response.data.msg)            
+           setArticleLoading(false)
         })
     }, [])
 
@@ -36,6 +45,14 @@ export default function GetArticle () {
             setHasVoted(false)
             localStorage.removeItem(`voted:${article_id}`)
         }
+    }
+
+    if(errorMessage){
+        return <ErrorPage errorMessage={errorMessage} />
+    }
+
+    if(articleLoading){
+        return <p>Article Loading...</p>
     }
 
 
