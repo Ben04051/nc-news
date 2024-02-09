@@ -15,7 +15,7 @@ function handleQueries(event) {
     event.preventDefault()
     const newSearchParams = new URLSearchParams()
     newSearchParams.set('sort_by', selectedSortQuery === null ? "created_at" : selectedSortQuery)
-    newSearchParams.set('order', selectedOrderQuery === null ? "asc" : selectedOrderQuery)
+    newSearchParams.set('order', selectedOrderQuery === null ? "desc" : selectedOrderQuery)
     setSearchParams(newSearchParams)
     setSearchFiltersApplied(true)
 }
