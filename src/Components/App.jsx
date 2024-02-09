@@ -14,8 +14,8 @@ function App() {
 
   return (
     <>
-      <Header/>
       <UserContext.Provider value={loggedInUser}>
+      <Header/>
       <Routes>
         <Route path="/" element ={<HomePage/>} />
         <Route path="/topics/:topic_query" element={<HomePage />} />

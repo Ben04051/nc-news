@@ -1,0 +1,33 @@
+
+.header-container {
+    display: flex;
+    background-color: blue;
+  }
+  
+  .left-box {
+    flex: 9.5; 
+    padding: 10px;
+  }
+  
+  .right-box {
+    flex: 0.5; 
+    padding: 10px; 
+  }
+
+
+.profile-picture {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: right;
+    padding-right: 0px;
+  }
+
+  h1 {
+    margin-top: 10px;
+    color: antiquewhite;
+    text-decoration: none;
+  }
+
+  
+  

@@ -31,13 +31,13 @@ function updateOrderQuery(event) {
 
     return (
     <form onSubmit={handleQueries}>
-        <label htmlFor="sort-by">Sort by:</label>
+        <label htmlFor="sort-by">Sort by: </label>
         <select required id="sort-by" onChange={updateSortQuery}  value={selectedSortQuery || "created_at"}>
         <option value="created_at">Date</option>
         <option value="comment_count">Comment count</option>
         <option value="votes">Votes</option>
         </select>
-        <label htmlFor="order">Order:</label>
+        <label htmlFor="order"> Order: </label>
         <select required id="order" onChange={updateOrderQuery} value={selectedOrderQuery || "desc"}>
         <option value="desc">Descending</option>
         <option value="asc">Ascending</option>

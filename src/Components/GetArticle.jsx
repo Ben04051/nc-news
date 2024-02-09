@@ -1,7 +1,8 @@
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 import { editVotes, getArticle, getAuthorName} from "../../utils/utils"
 import { useEffect, useState } from "react"
 import ErrorPage from "./ErrorPage"
+
 
 export default function GetArticle () {
     const {article_id} = useParams()
@@ -56,7 +57,7 @@ export default function GetArticle () {
 
 
     return <div>
-        <p className ="topic">{articleInfo.topic}</p>
+        <Link key={articleInfo.topic} to={`/topics/${articleInfo.topic}`}><p className ="topic">{articleInfo.topic}</p> </Link>
         <h2>{articleInfo.title}</h2>
         <img src={articleInfo.article_img_url} alt={`Image relating to ${articleInfo.topic}`} />
         <footer>
