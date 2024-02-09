@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element ={<HomePage/>} />
         <Route path="/topics/:topic_query" element={<HomePage />} />
-        <Route path= "/article/:article_title/:article_id" element ={<ArticlePage/>} />
+        <Route path= "/article/:article_id" element ={<ArticlePage/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       </UserContext.Provider>

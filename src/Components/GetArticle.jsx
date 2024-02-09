@@ -18,7 +18,6 @@ export default function GetArticle () {
         if (hasVotedStored) {
             setHasVoted(true);
         }
-        console.log(article_id)
         getArticle(article_id).then((response) => {
             setArticleInfo(response)
             setArticleVotes(response.votes)
@@ -59,7 +58,7 @@ export default function GetArticle () {
     return <div>
         <p className ="topic">{articleInfo.topic}</p>
         <h2>{articleInfo.title}</h2>
-        <img src={articleInfo.article_img_url} alt={articleInfo.title} />
+        <img src={articleInfo.article_img_url} alt={`Image relating to ${articleInfo.topic}`} />
         <footer>
         <p>By {authorName}</p>
         <p>NC News | {articleInfo.created_at ? articleInfo.created_at.slice(0,10) : ``}</p>
