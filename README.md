@@ -18,4 +18,4 @@ To run the file locally, carry out the following steps:
 
 Once cloned run 'npm install' in your terminal, following this the setup will be complete.
 
-To view changes made to the code in your browser before deployment, run 'npm run dev' and select open in browser when the pop up appears.
+To view changes made to the code in your browser before deployment, run 'npm run dev' and select 'open in browser' when the pop up appears.
