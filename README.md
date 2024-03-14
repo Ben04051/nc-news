@@ -1,8 +1,12 @@
 # NorthCoders News Front-end Project
 
 Link to the hosted site: https://nc-news-bm.netlify.app/
+
 Link to the hosted API: https://northcoders-news-tn61.onrender.com/api
+
 Link to the API Github Repository: https://github.com/Ben04051/Northcoders_News
+
+*Please allow up to 1 minute for the Back-end API become operational*
 
 The minimum version of Node.js required to run this project is v21.1.0
 
